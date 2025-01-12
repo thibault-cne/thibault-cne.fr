@@ -25,7 +25,9 @@
 	</header>
 	-->
 
-	<main class="mx-auto max-w-5xl">
-		{@render children()}
-	</main>
+	<div class="bg-light dark:bg-dark text-dark dark:text-light transition-colors duration-300">
+		<main class=" mx-auto max-w-5xl">
+			{@render children()}
+		</main>
+	</div>
 </ThemeInitializer>

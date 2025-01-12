@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ToggleDarkMode from '$lib/components/toggleDarkMode.svelte';
+
 	import { gsap } from 'gsap';
 
 	$effect(() => {
@@ -16,8 +18,9 @@
 </script>
 
 <section id="hero" class="h-screen">
+	<div class="absolute right-8 top-8 z-10"><ToggleDarkMode /></div>
 	<div class="flex h-full flex-col items-center justify-center pb-24">
-		<h1 class="text-shadow text-4xl shadow-gray-500 md:text-6xl lg:text-7xl">
+		<h1 class="text-shadow text-4xl shadow-gray-600 md:text-6xl lg:text-7xl dark:shadow-gray-100">
 			<span class="font-mono font-bold">Thibault</span>
 			<span class="font-thin">Cheneviere</span>
 		</h1>
@@ -31,7 +34,7 @@
 				target="_blank"
 				class="flex items-center space-x-2 rounded-full bg-orange-400 px-4 py-2 text-lg font-bold transition duration-300 hover:scale-110"
 			>
-				<span>GitHub</span>
+				<span class="text-black">GitHub</span>
 				<svg
 					viewBox="0 0 256 250"
 					class="ml-2 h-6 w-6"

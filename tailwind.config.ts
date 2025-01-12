@@ -9,6 +9,10 @@ export default {
 		extend: {
 			textShadow: {
 				DEFAULT: '0 0 12px var(--tw-shadow-color)'
+			},
+			colors: {
+				dark: 'rgb(10, 10, 10)',
+				light: 'rgb(252, 251, 247)'
 			}
 		}
 	},
