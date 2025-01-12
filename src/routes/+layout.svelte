@@ -7,6 +7,7 @@
 </script>
 
 <ThemeInitializer>
+	<!--
 	<header
 		class="dark:bg-dark-background fixed inset-x-0 top-0 z-10
        bg-white"
@@ -22,8 +23,9 @@
 			</div>
 		</nav>
 	</header>
+	-->
 
-	<main class="mx-auto max-w-5xl pt-24">
+	<main class="mx-auto max-w-5xl">
 		{@render children()}
 	</main>
 </ThemeInitializer>

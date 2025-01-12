@@ -12,6 +12,7 @@
 		--highlight-spread-r: 0;
 		--highlight-spread-b: 0;
 		--highlight-spread-l: 0;
+		--highlight-mask-size: 0% 100%;
 
 		&::after {
 			content: var(--tw-content);
@@ -25,8 +26,8 @@
 			-webkit-mask-image: url('/highlight.svg');
 			mask-repeat: no-repeat;
 			-webkit-mask-repeat: no-repeat;
-			mask-size: 100% 100%;
-			-webkit-mask-size: 100% 100%;
+			mask-size: var(--highlight-mask-size);
+			-webkit-mask-size: var(--highlight-mask-size);
 		}
 	}
 
@@ -35,21 +36,5 @@
 		--highlight-spread-r: -4px;
 		--highlight-spread-b: -4px;
 		--highlight-spread-l: -4px;
-	}
-
-	.highlight-animate {
-		&::after {
-			mask-size: 0% 100%;
-			-webkit-mask-size: 0% 100%;
-			animation: highlight-animation 0.5s ease-in-out;
-			animation-fill-mode: forwards;
-		}
-	}
-}
-
-@keyframes highlight-animation {
-	to {
-		mask-size: 100% 100%;
-		-webkit-mask-size: 100% 100%;
 	}
 }
