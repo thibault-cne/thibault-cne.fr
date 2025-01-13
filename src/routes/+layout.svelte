@@ -1,5 +1,8 @@
 <script lang="ts">
 	import ThemeInitializer from '$lib/components/themeInitializer.svelte';
+	import Particle from '$lib/components/particle.svelte';
+
+	import { darkmode } from '$lib/stores/darkmode';
 
 	import '../app.css';
 
@@ -25,8 +28,11 @@
 	</header>
 	-->
 
-	<div class="bg-light dark:bg-dark text-dark dark:text-light transition-colors duration-300">
-		<main class=" mx-auto max-w-5xl">
+	<div
+		class="bg-light dark:bg-dark text-dark dark:text-light scroll-auto transition-colors duration-300 lg:scroll-smooth"
+	>
+		<Particle class="absolute inset-0" quantity={150} color={$darkmode ? '#ffffff' : '#000000'} />
+		<main>
 			{@render children()}
 		</main>
 	</div>

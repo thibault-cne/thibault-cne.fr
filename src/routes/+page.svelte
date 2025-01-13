@@ -28,17 +28,17 @@
 			class="bg-gradient-to-r from-[#9C83FF] to-[#FF9051] bg-clip-text text-xl font-semibold text-transparent md:text-2xl"
 			>Software Engineer</span
 		>
-		<div class="mt-8 flex space-x-6">
+		<div class="mt-8 flex items-center space-x-6">
 			<a
 				href="https://github.com/thibault-cne"
 				target="_blank"
-				class="flex items-center space-x-2 rounded-full bg-orange-400 px-4 py-2 text-lg font-bold transition duration-300 hover:scale-110"
+				class="shadow-subtle flex items-center space-x-2 rounded-full bg-[#2dba4e] px-4 py-2 text-lg font-bold shadow-[#2dba4e] transition duration-300 hover:scale-110"
 			>
-				<span class="text-black">GitHub</span>
+				<span class="text-white">GitHub</span>
 				<svg
 					viewBox="0 0 256 250"
 					class="ml-2 h-6 w-6"
-					fill="black"
+					fill="white"
 					xmlns="http://www.w3.org/2000/svg"
 					preserveAspectRatio="xMidYMid"
 				>
@@ -50,7 +50,7 @@
 			<a
 				href="https://linkedin.com/in/thibault-cne"
 				target="_blank"
-				class="flex items-center space-x-2 rounded-full bg-[#0a66c2] px-4 py-2 text-lg font-bold text-white transition duration-300 hover:scale-110"
+				class="shadow-subtle flex items-center space-x-2 rounded-full bg-[#0a66c2] px-4 py-2 text-lg font-bold text-white shadow-[#0a66c2] transition duration-300 hover:scale-110"
 			>
 				<span>Linkedin</span>
 				<svg
@@ -65,45 +65,80 @@
 			</a>
 		</div>
 	</div>
+	<div class="absolute bottom-5 left-1/2 translate-x-1/2 animate-bounce">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			class="h-12 w-12"><path d="m6 9 6 6 6-6"></path></svg
+		>
+	</div>
 </section>
 
 <section id="about" class="h-screen">
-	<h1>
-		Hello! I'm Thibault a <span id="job" class="highlight highlight-spread-sm after:bg-indigo-500"
-			>Software Engineer</span
-		> based in Melbourne
-	</h1>
+	<div class="w-full bg-gray-100 py-20 dark:bg-gray-900">
+		<div class="container mx-auto flex flex-row space-x-16 font-mono">
+			<div class="h-64 w-64 flex-shrink-0 overflow-hidden rounded-full">
+				<img class="h-full w-full object-cover" src="/favicon.png" alt="profile" />
+			</div>
 
-	<div>
-		<p>
-			I love building tools that are <span
-				id="user-friendly"
-				class="highlight highlight-spread-sm after:bg-indigo-500">user-friendly</span
-			> simple and delighful.
-		</p>
+			<div>
+				<h1>About Me</h1>
 
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt delectus veniam sint fugit
-			modi, vero fugiat eligendi suscipit, dolor cum reiciendis inventore harum voluptas impedit ab
-			sapiente iste eveniet laborum!
-		</p>
+				<div>
+					<p>
+						Hello! I'm Thibault a graduate <span
+							id="job"
+							class="highlight highlight-spread-sm after:bg-indigo-500">Full Stack</span
+						>
+						Software Engineer based in Melbourne. I am also proeficient with deployment tools like
+						<span>Docker</span>, <span>Kubernetes</span>, and <span>GitHub</span> to ensure
+						<span>efficient and seamless</span>
+						deployments.
+					</p>
 
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ratione aliquam alias ullam
-			eveniet veritatis, quaerat saepe praesentium? Dicta, deserunt debitis molestias illo animi
-			itaque architecto quis quam ab ratione.
-		</p>
+					<p>
+						I am also passionate about sports, motorsport and writting. When I'm not coding, you
+						will find me either practicing or writting my thoughts.
+					</p>
 
-		<p>
-			I'm currently looking for a new role as a software engineer. <span
-				><a href="todo">Hire me?</a></span
-			>
-		</p>
-		<div>
-			<button>Linkedin</button>
-			<button>Github</button>
+					<p>
+						I'm currently looking for a new role as a software engineer. <span
+							><a href="todo">Hire me?</a></span
+						>
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
 
-<section id="blog" class="h-screen">blabla</section>
+<section id="blog" class="h-screen">Blog</section>
+
+<style>
+	.animate-bounce {
+		animation: bounce 2s infinite;
+	}
+
+	@keyframes bounce {
+		0%,
+		20%,
+		50%,
+		80%,
+		100% {
+			transform: translateX(-50%) translateY(0);
+		}
+		40% {
+			transform: translateX(-50%) translateY(-20px);
+		}
+		60% {
+			transform: translateX(-50%) translateY(-10px);
+		}
+	}
+</style>
