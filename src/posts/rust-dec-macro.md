@@ -3,7 +3,7 @@ title: A guide through rust declarative macros
 published: 2024-03-20
 summary: A beginner guide to get started with rust declarative macros.
 tags: rust, macros
-imgUrl: https://gist.github.com/assets/80970088/85122cb2-b231-4dcb-8d7b-1ade5caa7251
+imgUrl: https://gist.github.com/user-attachments/assets/dadc9288-a1a9-4beb-b783-136bfd1d4871
 ---
 
 # A guide through rust declarative macros

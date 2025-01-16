@@ -8,6 +8,7 @@ export const prerender = true;
 // get url path whenever visiting a new page
 export const load: LayoutLoad = ({ url }) => {
 	return {
-		pathname: url.pathname
+		pathname: url.pathname,
+		href: url.href
 	};
 };
