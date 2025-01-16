@@ -1,18 +1,21 @@
 <script lang="ts">
 	import ToggleDarkMode from '$lib/components/dark_mode_btn.svelte';
 	import PostListing from '$lib/components/post_listing.svelte';
+	import RepositoryListing from '$lib/components/repo_listing.svelte';
+	import ScaleHover from '$lib/components/scale_hover.svelte';
 	import type { PageData } from './$types';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 	let { data }: { data: PageData } = $props();
 
-	$effect(() => {
-		console.log(data);
-	});
+	function titleCase(string: string) {
+		return string[0].toUpperCase() + string.slice(1).toLowerCase();
+	}
+
+	gsap.registerPlugin(ScrollTrigger);
 
 	$effect(() => {
-		gsap.registerPlugin(ScrollTrigger);
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '#about',
@@ -37,6 +40,30 @@
 		tl.to('#github', {
 			'--highlight-mask-size': '100% 100%',
 			duration: 0.5
+		});
+	});
+
+	$effect(() => {
+		gsap.to('#project-underline', {
+			width: '100%',
+			scrollTrigger: {
+				trigger: '#project-title',
+				start: 'top-=50px 70%',
+				end: 'bottom+=50px 70%',
+				toggleActions: 'play none reverse none',
+				scrub: true
+			}
+		});
+
+		gsap.to('#blog-underline', {
+			width: '100%',
+			scrollTrigger: {
+				trigger: '#blog-title',
+				start: 'top-=50px 70%',
+				end: 'bottom+=50px 70%',
+				toggleActions: 'play none reverse none',
+				scrub: true
+			}
 		});
 	});
 </script>
@@ -139,13 +166,37 @@
 	</div>
 </section>
 
-<section id="blog" class="pt-24">
-	<h1 class="w-full text-center font-garamond text-3xl italic md:text-4xl">Blog</h1>
+{#snippet sectionHeader(name: string)}
+	<h1 class="text-center">
+		<span id={`${name}-title`} class="relative font-garamond text-3xl italic md:text-4xl"
+			>{titleCase(name)}
+			<span id={`${name}-underline`} class="absolute bottom-0 left-0 block h-[0.1rem] w-0 bg-light"
+			></span>
+		</span>
+	</h1>
+{/snippet}
 
-	<div class="mx-auto mt-8 max-w-3xl">
+<section id="blog" class="pt-24">
+	{@render sectionHeader('blog')}
+
+	<div class="group/list mx-auto mt-8 max-w-3xl">
 		{#each data.posts as post}
-			<PostListing {post} />
+			<ScaleHover><PostListing {post} /></ScaleHover>
 		{/each}
+	</div>
+</section>
+
+<section id="project" class="pt-24">
+	{@render sectionHeader('project')}
+
+	<div class="mx-auto mt-8 max-w-3xl lg:max-w-6xl">
+		<div class="group/list grid auto-rows-fr grid-cols-2 place-items-center lg:grid-cols-3">
+			{#each data.repos as repo}
+				<ScaleHover class="flex h-full items-center justify-center"
+					><RepositoryListing {repo} /></ScaleHover
+				>
+			{/each}
+		</div>
 	</div>
 </section>
 

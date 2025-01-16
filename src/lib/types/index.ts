@@ -27,3 +27,13 @@ export type Circle = {
 	dy: number;
 	magnetism: number;
 };
+
+export type Repository = {
+	name: string;
+	description: string;
+	url: string;
+	createdAt: string;
+	owner: {
+		login: string;
+	};
+};
