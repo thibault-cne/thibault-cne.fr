@@ -1,40 +1,64 @@
 <script lang="ts">
-	import ToggleDarkMode from '$lib/components/toggleDarkMode.svelte';
-
+	import ToggleDarkMode from '$lib/components/dark_mode_btn.svelte';
+	import PostListing from '$lib/components/post_listing.svelte';
+	import type { PageData } from './$types';
 	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+	let { data }: { data: PageData } = $props();
 
 	$effect(() => {
-		let tl = gsap.timeline();
+		console.log(data);
+	});
+
+	$effect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: '#about',
+				start: 'top 70%',
+				end: 'top 70%',
+				toggleActions: 'play none reverse none'
+			}
+		});
 
 		tl.to('#job', {
 			'--highlight-mask-size': '100% 100%',
-			duration: 1
+			duration: 0.5
 		});
-		tl.to('#user-friendly', {
+		tl.to('#docker', {
 			'--highlight-mask-size': '100% 100%',
-			duration: 1
+			duration: 0.5
+		});
+		tl.to('#kubernetes', {
+			'--highlight-mask-size': '100% 100%',
+			duration: 0.5
+		});
+		tl.to('#github', {
+			'--highlight-mask-size': '100% 100%',
+			duration: 0.5
 		});
 	});
 </script>
 
-<section id="hero" class="h-screen">
+<section id="hero" class="relative h-screen">
 	<div class="absolute right-8 top-8 z-10"><ToggleDarkMode /></div>
 	<div class="flex h-full flex-col items-center justify-center pb-24">
-		<h1 class="text-shadow text-4xl shadow-gray-600 md:text-6xl lg:text-7xl dark:shadow-gray-100">
+		<h1 class="text-4xl shadow-gray-600 text-shadow dark:shadow-gray-100 md:text-6xl lg:text-7xl">
 			<span class="font-mono font-bold">Thibault</span>
-			<span class="font-thin">Cheneviere</span>
+			<span class="font-garamond font-normal italic">Cheneviere</span>
 		</h1>
 		<span
-			class="bg-gradient-to-r from-[#9C83FF] to-[#FF9051] bg-clip-text text-xl font-semibold text-transparent md:text-2xl"
+			class="bg-gradient-to-r from-[#9C83FF] to-[#FF9051] bg-clip-text text-xl font-semibold text-transparent md:min-h-16 md:text-4xl lg:min-h-20 lg:text-5xl"
 			>Software Engineer</span
 		>
-		<div class="mt-8 flex items-center space-x-6">
+		<div class="mt-12 flex items-center space-x-6">
 			<a
 				href="https://github.com/thibault-cne"
 				target="_blank"
-				class="shadow-subtle flex items-center space-x-2 rounded-full bg-[#2dba4e] px-4 py-2 text-lg font-bold shadow-[#2dba4e] transition duration-300 hover:scale-110"
+				class="flex h-16 w-48 items-center justify-around rounded-full bg-[#2dba4e] text-lg font-bold shadow-subtle shadow-[#2dba4e] transition duration-300 hover:scale-110"
 			>
-				<span class="text-white">GitHub</span>
+				<span class="text-2xl text-white">GitHub</span>
 				<svg
 					viewBox="0 0 256 250"
 					class="ml-2 h-6 w-6"
@@ -50,9 +74,9 @@
 			<a
 				href="https://linkedin.com/in/thibault-cne"
 				target="_blank"
-				class="shadow-subtle flex items-center space-x-2 rounded-full bg-[#0a66c2] px-4 py-2 text-lg font-bold text-white shadow-[#0a66c2] transition duration-300 hover:scale-110"
+				class="flex h-16 w-48 items-center justify-around space-x-2 rounded-full bg-[#0a66c2] text-lg font-bold text-white shadow-subtle shadow-[#0a66c2] transition duration-300 hover:scale-110"
 			>
-				<span>Linkedin</span>
+				<span class="text-2xl text-white">Linkedin</span>
 				<svg
 					class="ml-2 h-6 w-6 fill-white"
 					xmlns="http://www.w3.org/2000/svg"
@@ -68,8 +92,6 @@
 	<div class="absolute bottom-5 left-1/2 translate-x-1/2 animate-bounce">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
 			viewBox="0 0 24 24"
 			fill="none"
 			stroke="currentColor"
@@ -81,45 +103,55 @@
 	</div>
 </section>
 
-<section id="about" class="h-screen">
-	<div class="w-full bg-gray-100 py-20 dark:bg-gray-900">
-		<div class="container mx-auto flex flex-row space-x-16 font-mono">
+<section id="about" class="bg-gray-100 py-20 dark:bg-gray-900">
+	<div class="container mx-auto px-4">
+		<h1 class="mb-8 text-center font-garamond text-3xl font-normal italic md:text-4xl">About Me</h1>
+		<div
+			class="flex flex-col items-center justify-center space-y-8 font-mono md:flex-row md:items-start md:space-x-12 md:space-y-0"
+		>
 			<div class="h-64 w-64 flex-shrink-0 overflow-hidden rounded-full">
 				<img class="h-full w-full object-cover" src="/favicon.png" alt="profile" />
 			</div>
 
-			<div>
-				<h1>About Me</h1>
-
-				<div>
-					<p>
-						Hello! I'm Thibault a graduate <span
-							id="job"
-							class="highlight highlight-spread-sm after:bg-indigo-500">Full Stack</span
-						>
-						Software Engineer based in Melbourne. I am also proeficient with deployment tools like
-						<span>Docker</span>, <span>Kubernetes</span>, and <span>GitHub</span> to ensure
-						<span>efficient and seamless</span>
-						deployments.
-					</p>
-
-					<p>
-						I am also passionate about sports, motorsport and writting. When I'm not coding, you
-						will find me either practicing or writting my thoughts.
-					</p>
-
-					<p>
-						I'm currently looking for a new role as a software engineer. <span
-							><a href="todo">Hire me?</a></span
-						>
-					</p>
-				</div>
+			<div class="max-w-2xl text-center md:text-left">
+				<p class="font-space-mono text-lg md:text-xl">
+					Hello! I'm Thibault a graduate <span
+						id="job"
+						class="highlight highlight-spread-sm after:bg-indigo-500">Full Stack</span
+					>
+					Software Engineer based in Melbourne. I am also proeficient with deployment tools like
+					<span id="docker" class="highlight highlight-spread-sm after:bg-[#1d63ed]">Docker</span>,
+					<span id="kubernetes" class="highlight highlight-spread-sm after:bg-[#326ce5]"
+						>Kubernetes</span
+					>, and
+					<span id="github" class="highlight highlight-spread-sm after:bg-[#2dba4e]">GitHub</span>
+					to ensure
+					<span>efficient and seamless</span>
+					deployments.
+				</p>
+				<br />
+				<p class="font-space-mono text-lg md:text-xl">
+					I am passionate about sports, motorsport and cooking. When I'm not coding, you will find
+					me either practicing or trying out new recipes.
+				</p>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section id="blog" class="h-screen">Blog</section>
+<section id="blog" class="pt-24">
+	<h1 class="w-full text-center font-garamond text-3xl italic md:text-4xl">Blog</h1>
+
+	<div class="mx-auto mt-8 max-w-3xl">
+		{#each data.posts as post}
+			<PostListing {post} />
+		{/each}
+	</div>
+</section>
+
+<footer class="mt-8 w-full bg-light py-4 text-center dark:bg-slate-900">
+	<a href="https://github.com/thibault-cne">made with love by thibault-cne</a>
+</footer>
 
 <style>
 	.animate-bounce {

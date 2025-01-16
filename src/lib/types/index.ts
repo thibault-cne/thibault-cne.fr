@@ -5,6 +5,7 @@ export type MarkdownPost = {
 		title: string;
 		published: string;
 		summary: string;
+		imgUrl: string;
 	};
 	default: Component;
 };

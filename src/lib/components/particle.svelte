@@ -3,6 +3,7 @@
 
 	let {
 		class: klass = '',
+		canvasContainerRef,
 		quantity = 100,
 		staticity = 100,
 		ease = 50,
@@ -13,7 +14,6 @@
 	} = $props();
 
 	let canvasRef: HTMLCanvasElement;
-	let canvasContainerRef: HTMLDivElement;
 	let context: CanvasRenderingContext2D | null = null;
 	let circles: Circle[] = [];
 	let mouse = { x: 0, y: 0 };
@@ -66,7 +66,6 @@
 
 	function resizeCanvas() {
 		if (canvasContainerRef && canvasRef && context) {
-			circles.length = 0;
 			canvasSize.w = canvasContainerRef.offsetWidth;
 			canvasSize.h = canvasContainerRef.offsetHeight;
 			canvasRef.width = canvasSize.w * dpr;
@@ -188,6 +187,4 @@
 	});
 </script>
 
-<div class={klass} bind:this={canvasContainerRef} aria-hidden="true">
-	<canvas bind:this={canvasRef} class="h-full w-full"> </canvas>
-</div>
+<canvas bind:this={canvasRef} class={`${klass} absolute inset-0 h-full w-full`}></canvas>

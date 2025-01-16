@@ -16,6 +16,10 @@ export default {
 			},
 			boxShadow: {
 				subtle: '0 0 12px var(--tw-shadow-color)'
+			},
+			fontFamily: {
+				garamond: ['EB Garamond', 'serif'],
+				'space-mono': ['Space Mono', 'monospace']
 			}
 		}
 	},

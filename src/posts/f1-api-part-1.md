@@ -1,8 +1,9 @@
 ---
 title: How I built a Formula1 API 🏎 - part 1
-published: 2023-10-01
+published: 2024-01-24
 summary: Building a Formula1 REST API in Rust using diesel.rs and rocket.rs.
 tags: rust, api, f1, diesel, rocket
+imgUrl: https://gist.github.com/assets/80970088/20244f67-f1d5-4866-b971-bd40fd024748
 ---
 
 # How I built a Formula1 API 🏎 - part 1

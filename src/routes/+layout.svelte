@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ThemeInitializer from '$lib/components/themeInitializer.svelte';
+	import ThemeInitializer from '$lib/components/theme_initializer.svelte';
 	import Particle from '$lib/components/particle.svelte';
 
 	import { darkmode } from '$lib/stores/darkmode';
@@ -7,32 +7,23 @@
 	import '../app.css';
 
 	let { children } = $props();
+
+	let canvasContainerRef: HTMLDivElement = $state() as HTMLDivElement;
 </script>
 
 <ThemeInitializer>
-	<!--
-	<header
-		class="dark:bg-dark-background fixed inset-x-0 top-0 z-10
-       bg-white"
-	>
-		<nav
-			class="mx-auto flex h-24 max-w-5xl
- items-center justify-between"
-		>
-			<span>Thibault Cheneviere</span>
-			<div class="flex items-center space-x-10">
-				<a href="#about">About</a>
-				<a href="todo">Blog</a>
-			</div>
-		</nav>
-	</header>
-	-->
+	<Particle
+		{canvasContainerRef}
+		quantity={150}
+		color={$darkmode ? '#ffffff' : '#000000'}
+		size={0.6}
+	/>
 
 	<div
-		class="bg-light dark:bg-dark text-dark dark:text-light scroll-auto transition-colors duration-300 lg:scroll-smooth"
+		bind:this={canvasContainerRef}
+		class="scroll-auto bg-slate-200 text-dark transition-colors duration-300 dark:bg-slate-800 dark:text-light lg:scroll-smooth"
 	>
-		<Particle class="absolute inset-0" quantity={150} color={$darkmode ? '#ffffff' : '#000000'} />
-		<main>
+		<main class="relative z-10">
 			{@render children()}
 		</main>
 	</div>
