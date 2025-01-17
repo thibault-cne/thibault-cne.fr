@@ -11,6 +11,7 @@ README.md
 .editorconfig
 .svelte-kit
 .vscode
+.bruno
 node_modules
 build
 package
