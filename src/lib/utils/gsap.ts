@@ -23,7 +23,7 @@ export function sectionAnimation(sections: SectionAnimation[]) {
 			tl.fromTo(
 				tag,
 				{
-					translateY: '30%',
+					translateY: '5rem',
 					opacity: 0
 				},
 				{

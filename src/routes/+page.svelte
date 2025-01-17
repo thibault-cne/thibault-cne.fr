@@ -72,7 +72,7 @@
 			class="bg-gradient-to-r from-[#9C83FF] to-[#FF9051] bg-clip-text text-xl font-semibold text-transparent md:min-h-16 md:text-4xl lg:min-h-20 lg:text-5xl"
 			>Software Engineer</span
 		>
-		<div class="mt-12 flex items-center space-x-6">
+		<div class="mt-12 flex flex-col items-center space-y-6 sm:flex-row sm:space-x-6 sm:space-y-0">
 			<a
 				href="https://github.com/thibault-cne"
 				target="_blank"
@@ -174,7 +174,7 @@
 <section id="blog" class="pt-24">
 	{@render sectionHeader('blog')}
 
-	<div class="group/list mx-auto mt-8 max-w-3xl">
+	<div class="group/list mx-auto mt-8 max-w-xs sm:max-w-lg md:max-w-3xl">
 		{#each data.posts as post}
 			<ScaleHover><PostListing {post} /></ScaleHover>
 		{/each}
@@ -184,10 +184,12 @@
 <section id="project" class="pt-24">
 	{@render sectionHeader('project')}
 
-	<div class="mx-auto mt-8 max-w-3xl lg:max-w-7xl">
-		<div class="group/list grid auto-rows-fr grid-cols-2 place-items-center lg:grid-cols-3">
+	<div class="mx-auto mt-8 max-w-xs sm:max-w-lg md:max-w-3xl lg:max-w-7xl">
+		<div
+			class="group/list grid auto-rows-fr grid-cols-1 place-items-center sm:grid-cols-2 2xl:grid-cols-3"
+		>
 			{#each data.repos as repo}
-				<ScaleHover class="flex h-full items-center justify-center"
+				<ScaleHover class="flex h-full w-full items-center justify-center"
 					><RepositoryListing {repo} /></ScaleHover
 				>
 			{/each}

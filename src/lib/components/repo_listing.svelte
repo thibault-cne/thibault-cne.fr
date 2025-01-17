@@ -7,7 +7,7 @@
 	const url = `https://opengraph.githubassets.com/1/${repo.owner.login}/${repo.name}`;
 </script>
 
-<div class="flex h-full flex-col space-x-2 py-4 sm:w-80 sm:space-x-4 lg:w-96">
+<div class="flex h-full w-full flex-col space-x-2 py-4 sm:w-80 sm:space-x-4 lg:w-96">
 	<a href={repo.url} class="block w-full">
 		<div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-lg">
 			<img loading="lazy" src={url} alt={repo.name} class="object-cover" />
