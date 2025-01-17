@@ -9,3 +9,17 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
+    groups:
+      linting:
+        patterns:
+          - '@eslint'
+          - 'eslint'
+          - 'typescript-eslint'
+          - 'prettier'
+      svelte:
+        patterns:
+          - '@sveltejs'
+          - 'svelte'
+      tailwind:
+        patterns:
+          - '@tailwindcss'
