@@ -1,9 +1,7 @@
 import type { LayoutLoad } from './$types';
 
-// add this to root layout
-// to prerender all our pages
-// during build time
-export const prerender = true;
+// We can't prerender all pages because of gsap animations
+export const prerender = false;
 
 // get url path whenever visiting a new page
 export const load: LayoutLoad = ({ url }) => {

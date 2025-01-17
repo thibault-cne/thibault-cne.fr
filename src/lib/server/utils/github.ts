@@ -30,6 +30,14 @@ export async function get_repo(): Promise<Repository[]> {
             }`
 			})
 		});
+
+		const limit = res.headers.get('x-ratelimit-limit');
+
+		if (limit && limit === '0') {
+			console.log('Github rate limit reached');
+			return [];
+		}
+
 		const json = await res.json();
 		return json.data.user.pinnedItems.nodes;
 	} catch (err) {
