@@ -7,6 +7,8 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+	import { sectionAnimation } from '$lib/utils/gsap';
+
 	let { data }: { data: PageData } = $props();
 
 	function titleCase(string: string) {
@@ -44,29 +46,20 @@
 	});
 
 	$effect(() => {
-		gsap.to('#project-underline', {
-			width: '100%',
-			scrollTrigger: {
-				trigger: '#project-title',
-				start: 'top-=50px 70%',
-				end: 'bottom+=50px 70%',
-				toggleActions: 'play none reverse none',
-				scrub: true
-			}
-		});
-
-		gsap.to('#blog-underline', {
-			width: '100%',
-			scrollTrigger: {
-				trigger: '#blog-title',
-				start: 'top-=50px 70%',
-				end: 'bottom+=50px 70%',
-				toggleActions: 'play none reverse none',
-				scrub: true
-			}
-		});
+		sectionAnimation([
+			{ tag: '#about' },
+			{ tag: '#blog', timelineUnderline: true },
+			{ tag: '#project', timelineUnderline: true }
+		]);
 	});
 </script>
+
+<svelte:head>
+	<meta property="og:url" content="https://thibault-cne.fr" />
+	<meta property="og:title" content="Thibault Cheneviere" />
+	<meta property="og:description" content="Thibault Cheneviere's portfolio website" />
+	<meta property="og:image" content="https://thibault-cne.fr/favicon.png" />
+</svelte:head>
 
 <section id="hero" class="relative h-screen">
 	<div class="absolute right-8 top-8 z-10"><ToggleDarkMode /></div>
@@ -170,7 +163,9 @@
 	<h1 class="text-center">
 		<span id={`${name}-title`} class="relative font-garamond text-3xl italic md:text-4xl"
 			>{titleCase(name)}
-			<span id={`${name}-underline`} class="absolute bottom-0 left-0 block h-[0.1rem] w-0 bg-light"
+			<span
+				id={`${name}-underline`}
+				class="absolute bottom-0 left-0 block h-[0.1rem] w-0 bg-dark dark:bg-light"
 			></span>
 		</span>
 	</h1>
@@ -189,7 +184,7 @@
 <section id="project" class="pt-24">
 	{@render sectionHeader('project')}
 
-	<div class="mx-auto mt-8 max-w-3xl lg:max-w-6xl">
+	<div class="mx-auto mt-8 max-w-3xl lg:max-w-7xl">
 		<div class="group/list grid auto-rows-fr grid-cols-2 place-items-center lg:grid-cols-3">
 			{#each data.repos as repo}
 				<ScaleHover class="flex h-full items-center justify-center"

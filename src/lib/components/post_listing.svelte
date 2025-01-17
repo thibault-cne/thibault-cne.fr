@@ -11,7 +11,12 @@
 	<a {href} target="_blank" class="sm:flex sm:space-x-4">
 		<div class="block sm:w-80">
 			<div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-lg">
-				<img src={post.metadata.imgUrl} alt={post.metadata.title} class="object-cover" />
+				<img
+					loading="lazy"
+					src={post.metadata.imgUrl}
+					alt={post.metadata.title}
+					class="object-cover"
+				/>
 			</div>
 		</div>
 
