@@ -14,6 +14,7 @@ COPY . .
 
 ENV GITHUB_PAT=$GITHUB_PAT
 
+RUN pnpm run generate
 RUN pnpm run build
 RUN pnpm prune --prod
 
