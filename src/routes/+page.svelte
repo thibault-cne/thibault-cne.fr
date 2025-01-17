@@ -8,12 +8,9 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 	import { sectionAnimation } from '$lib/utils/gsap';
+	import { titleCase } from '$lib/utils/string';
 
 	let { data }: { data: PageData } = $props();
-
-	function titleCase(string: string) {
-		return string[0].toUpperCase() + string.slice(1).toLowerCase();
-	}
 
 	gsap.registerPlugin(ScrollTrigger);
 
