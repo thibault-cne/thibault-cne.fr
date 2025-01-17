@@ -50,4 +50,4 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          build-args: GITHUB_PAT=${{ secrets.GITHUB_PAT }}
+          build-args: GITHUB_PAT=${{ secrets.GH_PAT }}
