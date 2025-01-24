@@ -1,4 +1,3 @@
 export function isMobile() {
-	const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-	return regex.test(navigator.userAgent);
+	return window.matchMedia('only screen and (max-width: 480px)').matches;
 }
