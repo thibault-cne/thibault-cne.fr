@@ -4,7 +4,7 @@
 	import RepositoryListing from '$lib/components/repo_listing.svelte';
 	import ScaleHover from '$lib/components/scale_hover.svelte';
 	import type { PageData } from './$types';
-	import { gsap } from 'gsap/dist/gsap';
+	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 	import { sectionAnimation } from '$lib/utils/gsap';
