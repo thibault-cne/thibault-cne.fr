@@ -197,25 +197,3 @@
 <footer class="bg-light mt-8 w-full py-4 text-center dark:bg-slate-900">
 	<a href="https://github.com/thibault-cne">made with love by thibault-cne</a>
 </footer>
-
-<style>
-	.animate-bounce {
-		animation: bounce 2s infinite;
-	}
-
-	@keyframes bounce {
-		0%,
-		20%,
-		50%,
-		80%,
-		100% {
-			transform: translateX(-50%) translateY(0);
-		}
-		40% {
-			transform: translateX(-50%) translateY(-20px);
-		}
-		60% {
-			transform: translateX(-50%) translateY(-10px);
-		}
-	}
-</style>
