@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/aspect-ratio";
 
 @theme {
 	--color-dark: rgb(10, 10, 10);
@@ -7,45 +9,61 @@
 	--shadow-subtle: 0 0 12px var(--tw-shadow-color);
 
 	--font-garamond: 'EB Garamond', 'serif';
+
+	--animate-bounce: bounce 2s infinite;
+
+	@keyframes bounce {
+		0%,
+		20%,
+		50%,
+		80%,
+		100% {
+			transform: translateX(-50%) translateY(0);
+		}
+		40% {
+			transform: translateX(-50%) translateY(-20px);
+		}
+		60% {
+			transform: translateX(-50%) translateY(-10px);
+		}
+	}
 }
 
-.text-shadow {
+@utility text-shadow {
 	text-shadow: 0 0 12px var(--tw-shadow-color);
 }
 
-@layer base {
-	.highlight {
-		isolation: isolate;
-		position: relative;
-		white-space: nowrap;
+@utility highlight {
+	isolation: isolate;
+	position: relative;
+	white-space: nowrap;
 
-		--highlight-spread-t: 0;
-		--highlight-spread-r: 0;
-		--highlight-spread-b: 0;
-		--highlight-spread-l: 0;
-		--highlight-mask-size: 0% 100%;
+	--highlight-spread-t: 0;
+	--highlight-spread-r: 0;
+	--highlight-spread-b: 0;
+	--highlight-spread-l: 0;
+	--highlight-mask-size: 0% 100%;
 
-		&::after {
-			content: var(--tw-content);
-			position: absolute;
-			z-index: -1;
-			top: var(--highlight-spread-t);
-			bottom: var(--highlight-spread-b);
-			left: var(--highlight-spread-l);
-			right: var(--highlight-spread-r);
-			mask-image: url('/highlight.svg');
-			-webkit-mask-image: url('/highlight.svg');
-			mask-repeat: no-repeat;
-			-webkit-mask-repeat: no-repeat;
-			mask-size: var(--highlight-mask-size);
-			-webkit-mask-size: var(--highlight-mask-size);
-		}
+	&::after {
+		content: var(--tw-content);
+		position: absolute;
+		z-index: -1;
+		top: var(--highlight-spread-t);
+		bottom: var(--highlight-spread-b);
+		left: var(--highlight-spread-l);
+		right: var(--highlight-spread-r);
+		mask-image: url('/highlight.svg');
+		-webkit-mask-image: url('/highlight.svg');
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		mask-size: var(--highlight-mask-size);
+		-webkit-mask-size: var(--highlight-mask-size);
 	}
+}
 
-	.highlight-spread-sm {
-		--highlight-spread-t: -4px;
-		--highlight-spread-r: -4px;
-		--highlight-spread-b: -4px;
-		--highlight-spread-l: -4px;
-	}
+@utility highlight-spread-sm {
+	--highlight-spread-t: -4px;
+	--highlight-spread-r: -4px;
+	--highlight-spread-b: -4px;
+	--highlight-spread-l: -4px;
 }

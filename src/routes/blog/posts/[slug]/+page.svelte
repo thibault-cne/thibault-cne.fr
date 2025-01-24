@@ -1,6 +1,7 @@
 <script lang="ts">
 	import './prism-night-owl.css';
 	import type { PageData } from './$types';
+	import CopyCodeInjector from '$lib/components/copy_code_injector.svelte';
 
 	let { data }: { data: PageData } = $props();
 
@@ -15,7 +16,9 @@
 </svelte:head>
 
 <article>
-	<div class="prose max-w-none px-4 py-4 dark:prose-invert">
-		<Post />
+	<div class="prose dark:prose-invert max-w-none px-4 py-4">
+		<CopyCodeInjector>
+			<Post />
+		</CopyCodeInjector>
 	</div>
 </article>
