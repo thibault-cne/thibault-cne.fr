@@ -1,4 +1,5 @@
 import type { LayoutLoad } from './$types';
+import { isMobile } from '$lib/utils/mobile';
 
 // We can't prerender all pages because of gsap animations
 export const prerender = false;
@@ -7,6 +8,7 @@ export const prerender = false;
 export const load: LayoutLoad = ({ url }) => {
 	return {
 		pathname: url.pathname,
-		href: url.href
+		href: url.href,
+		isMobile: isMobile()
 	};
 };
