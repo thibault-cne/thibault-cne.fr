@@ -1,6 +1,17 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+
+@theme {
+	--color-dark: rgb(10, 10, 10);
+	--color-light: rgb(252, 251, 247);
+
+	--shadow-subtle: 0 0 12px var(--tw-shadow-color);
+
+	--font-garamond: 'EB Garamond', 'serif';
+}
+
+.text-shadow {
+	text-shadow: 0 0 12px var(--tw-shadow-color);
+}
 
 @layer base {
 	.highlight {
