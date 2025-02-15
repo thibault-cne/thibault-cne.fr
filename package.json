@@ -14,7 +14,7 @@
 		"generate": "svelte-kit sync"
 	},
 	"devDependencies": {
-		"@eslint/compat": "^1.2.5",
+		"@eslint/compat": "^1.2.6",
 		"@eslint/js": "^9.19.0",
 		"@sveltejs/adapter-auto": "^4.0.0",
 		"@sveltejs/adapter-node": "^5.2.12",
