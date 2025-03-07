@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@tailwindcss/typography':
         specifier: ^0.5.16
-        version: 0.5.16(tailwindcss@4.0.7)
+        version: 0.5.16(tailwindcss@4.0.12)
       gsap:
         specifier: ^3.12.7
         version: 3.12.7
@@ -38,7 +38,7 @@ importers:
         version: 4.0.4(svelte@5.20.2)(vite@5.4.11(lightningcss@1.29.1)(sass@1.85.0))
       '@tailwindcss/aspect-ratio':
         specifier: ^0.4.2
-        version: 0.4.2(tailwindcss@4.0.7)
+        version: 0.4.2(tailwindcss@4.0.12)
       '@tailwindcss/postcss':
         specifier: ^4.0.7
         version: 4.0.7
@@ -82,8 +82,8 @@ importers:
         specifier: ^4.1.4
         version: 4.1.4(picomatch@4.0.2)(svelte@5.20.2)(typescript@5.7.3)
       tailwindcss:
-        specifier: ^4.0.7
-        version: 4.0.7
+        specifier: ^4.0.12
+        version: 4.0.12
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -1546,6 +1546,9 @@ packages:
     resolution: {integrity: sha512-aYXJreNUiyTob0QOzRZeBXZMGeFZDch6SrSRV8QTncZb6zj0O3BEdUzPpojuHQ1pTvk+KX7I6rZCXPUf8pTPxA==}
     engines: {node: '>=18'}
 
+  tailwindcss@4.0.12:
+    resolution: {integrity: sha512-bT0hJo91FtncsAMSsMzUkoo/iEU0Xs5xgFgVC9XmdM9bw5MhZuQFjPNl6wxAE0SiQF/YTZJa+PndGWYSDtuxAg==}
+
   tailwindcss@4.0.7:
     resolution: {integrity: sha512-yH5bPPyapavo7L+547h3c4jcBXcrKwybQRjwdEIVAd9iXRvy/3T1CC6XSQEgZtRySjKfqvo3Cc0ZF1DTheuIdA==}
 
@@ -2042,9 +2045,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tailwindcss/aspect-ratio@0.4.2(tailwindcss@4.0.7)':
+  '@tailwindcss/aspect-ratio@0.4.2(tailwindcss@4.0.12)':
     dependencies:
-      tailwindcss: 4.0.7
+      tailwindcss: 4.0.12
 
   '@tailwindcss/node@4.0.7':
     dependencies:
@@ -2108,13 +2111,13 @@ snapshots:
       postcss: 8.5.2
       tailwindcss: 4.0.7
 
-  '@tailwindcss/typography@0.5.16(tailwindcss@4.0.7)':
+  '@tailwindcss/typography@0.5.16(tailwindcss@4.0.12)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 4.0.7
+      tailwindcss: 4.0.12
 
   '@tailwindcss/vite@4.0.7(vite@5.4.11(lightningcss@1.29.1)(sass@1.85.0))':
     dependencies:
@@ -2934,6 +2937,8 @@ snapshots:
       locate-character: 3.0.0
       magic-string: 0.30.17
       zimmerframe: 1.1.2
+
+  tailwindcss@4.0.12: {}
 
   tailwindcss@4.0.7: {}
 
