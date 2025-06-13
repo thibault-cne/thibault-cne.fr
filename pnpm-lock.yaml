@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@tailwindcss/typography':
         specifier: ^0.5.16
-        version: 0.5.16(tailwindcss@4.0.7)
+        version: 0.5.16(tailwindcss@4.1.10)
       gsap:
         specifier: ^3.12.7
         version: 3.12.7
@@ -38,7 +38,7 @@ importers:
         version: 4.0.4(svelte@5.20.2)(vite@5.4.11(lightningcss@1.30.1)(sass@1.85.0))
       '@tailwindcss/aspect-ratio':
         specifier: ^0.4.2
-        version: 0.4.2(tailwindcss@4.0.7)
+        version: 0.4.2(tailwindcss@4.1.10)
       '@tailwindcss/postcss':
         specifier: ^4.0.7
         version: 4.0.7
@@ -82,8 +82,8 @@ importers:
         specifier: ^4.1.4
         version: 4.1.4(picomatch@4.0.2)(svelte@5.20.2)(typescript@5.7.3)
       tailwindcss:
-        specifier: ^4.0.7
-        version: 4.0.7
+        specifier: ^4.1.10
+        version: 4.1.10
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -1723,6 +1723,9 @@ packages:
   tailwindcss@4.0.7:
     resolution: {integrity: sha512-yH5bPPyapavo7L+547h3c4jcBXcrKwybQRjwdEIVAd9iXRvy/3T1CC6XSQEgZtRySjKfqvo3Cc0ZF1DTheuIdA==}
 
+  tailwindcss@4.1.10:
+    resolution: {integrity: sha512-P3nr6WkvKV/ONsTzj6Gb57sWPMX29EPNPopo7+FcpkQaNsrNpZ1pv8QmrYI2RqEKD7mlGqLnGovlcYnBK0IqUA==}
+
   tailwindcss@4.1.7:
     resolution: {integrity: sha512-kr1o/ErIdNhTz8uzAYL7TpaUuzKIE6QPQ4qmSdxnoX/lo+5wmUHQA6h3L5yIqEImSRnAAURDirLu/BgiXGPAhg==}
 
@@ -2229,9 +2232,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tailwindcss/aspect-ratio@0.4.2(tailwindcss@4.0.7)':
+  '@tailwindcss/aspect-ratio@0.4.2(tailwindcss@4.1.10)':
     dependencies:
-      tailwindcss: 4.0.7
+      tailwindcss: 4.1.10
 
   '@tailwindcss/node@4.0.7':
     dependencies:
@@ -2359,13 +2362,13 @@ snapshots:
       postcss: 8.5.2
       tailwindcss: 4.0.7
 
-  '@tailwindcss/typography@0.5.16(tailwindcss@4.0.7)':
+  '@tailwindcss/typography@0.5.16(tailwindcss@4.1.10)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 4.0.7
+      tailwindcss: 4.1.10
 
   '@tailwindcss/vite@4.1.7(vite@5.4.11(lightningcss@1.30.1)(sass@1.85.0))':
     dependencies:
@@ -3243,6 +3246,8 @@ snapshots:
       zimmerframe: 1.1.2
 
   tailwindcss@4.0.7: {}
+
+  tailwindcss@4.1.10: {}
 
   tailwindcss@4.1.7: {}
 
