@@ -21,7 +21,7 @@
 		"@sveltejs/kit": "^2.17.2",
 		"@sveltejs/vite-plugin-svelte": "^4.0.4",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
-		"@tailwindcss/postcss": "^4.0.7",
+		"@tailwindcss/postcss": "^4.1.10",
 		"@tailwindcss/vite": "^4.1.7",
 		"autoprefixer": "^10.4.20",
 		"eslint": "^9.29.0",
