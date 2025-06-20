@@ -1,4 +1,4 @@
-import type { MarkdownPost, MarkdownPostMetadataAndSlug } from '../../types';
+import type { MarkdownPost, MarkdownPostMetadataAndSlug } from '$lib/types';
 import { json, type RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async () => {
@@ -33,12 +33,13 @@ export const GET: RequestHandler = async () => {
 	const posts = await Promise.all(postPromises);
 
 	// sort by publication date (descending/most recent first)
-	const sortedPosts = posts.sort((post1: MarkdownPost, post2: MarkdownPost) => {
-		return (
-			new Date(post2.metadata.publishedAt).getTime() -
-			new Date(post1.metadata.publishedAt).getTime()
-		);
-	});
+	const sortedPosts = posts.sort(
+		(post1: MarkdownPostMetadataAndSlug, post2: MarkdownPostMetadataAndSlug) => {
+			return (
+				new Date(post2.metadata.published).getTime() - new Date(post1.metadata.published).getTime()
+			);
+		}
+	);
 
 	return json(sortedPosts);
 };
