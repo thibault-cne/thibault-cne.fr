@@ -136,7 +136,7 @@
 						id="job"
 						class="highlight highlight-spread-sm after:bg-indigo-500">Full Stack</span
 					>
-					Software Engineer based in Paris. I proeficient with deployment tools like
+					Software Engineer based in Paris. I am proficient with deployment tools like
 					<span id="docker" class="highlight highlight-spread-sm after:bg-[#1d63ed]">Docker</span>,
 					<span id="kubernetes" class="highlight highlight-spread-sm after:bg-[#326ce5]"
 						>Kubernetes</span
