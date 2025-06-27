@@ -43,6 +43,6 @@
 	"dependencies": {
 		"@tailwindcss/typography": "^0.5.16",
 		"gsap": "^3.12.7",
-		"keyv": "^5.2.3"
+		"keyv": "^5.3.4"
 	}
 }
