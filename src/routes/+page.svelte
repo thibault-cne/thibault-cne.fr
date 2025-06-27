@@ -172,7 +172,7 @@
 	{@render sectionHeader('blog')}
 
 	<div class="group/list mx-auto mt-8 max-w-xs sm:max-w-lg md:max-w-3xl">
-		{#each data.posts as post}
+		{#each data.posts as post (post)}
 			<ScaleHover><PostListing {post} /></ScaleHover>
 		{/each}
 	</div>
@@ -185,7 +185,7 @@
 		<div
 			class="group/list grid auto-rows-fr grid-cols-1 place-items-center sm:grid-cols-2 2xl:grid-cols-3"
 		>
-			{#each data.repos as repo}
+			{#each data.repos as repo (repo)}
 				<ScaleHover class="flex h-full w-full items-center justify-center"
 					><RepositoryListing {repo} /></ScaleHover
 				>
