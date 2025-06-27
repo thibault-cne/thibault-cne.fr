@@ -43,6 +43,7 @@
 	"dependencies": {
 		"@tailwindcss/typography": "^0.5.16",
 		"gsap": "^3.12.7",
-		"keyv": "^5.3.4"
+		"keyv": "^5.3.4",
+		"svelte-qrcode": "^1.0.1"
 	}
 }
